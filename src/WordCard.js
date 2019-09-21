@@ -56,7 +56,8 @@ export default class WordCard extends
                 {this.state.chars.map((c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
                     activationHandler={this.activationHandler} />)}<br></br>
                     <text style={mystyle}>guess ={this.state.guess}</text>
-                    
+                    <text style={mystylecolor}>attempt ={this.state.attempt} </text>
+                    <button onClick={() => this.shoot("Hello")}>Answer</button>
 
             </div>
         );

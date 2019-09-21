@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import CharacterCard from './CharacterCard.js';
 import _ from 'lodash';
 const prepareStateFromWord = (given_word) => {
@@ -12,6 +13,7 @@ const prepareStateFromWord = (given_word) => {
         guess: [],
         completed: false
     }
+
 }
 
 export default class WordCard extends
@@ -21,6 +23,9 @@ export default class WordCard extends
         this.state = {
             attempt: '',
         }
+    }
+    shoot = (a) => {
+        alert(a);
     }
     componentWillMount(){
         let data = prepareStateFromWord(this.props.value);
@@ -47,9 +52,31 @@ export default class WordCard extends
         console.log(this.state);
         return (
             <div>
+               
                 {this.state.chars.map((c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
-                    activationHandler={this.activationHandler} />)}
+                    activationHandler={this.activationHandler} />)}<br></br>
+                    <text style={mystyle}>guess ={this.state.guess}</text>
+                    
+
             </div>
         );
     }
+}
+const mystyle = {
+    color: "white",
+    width: '40%', opacity: 0.7,
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Arial",
+}
+const mystylecolor = {
+    color: "white",
+    width: '40%', opacity: 0.4,
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Arial",
+}
+const mystylex = {
+    
+        flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
 }

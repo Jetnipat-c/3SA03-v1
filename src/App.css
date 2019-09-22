@@ -57,3 +57,24 @@ background-attachment: fixed;
 
 background-position: top center;
 }
+.cc {
+  border: 2px solid rgb(0, 255, 128);
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  align-content: center
+}
+
+
+h2{
+  font-size:2vw;
+  text-align-last: center;
+  color: rgb(244, 73, 250);
+  
+}
+div.ex1 {
+  width:900px;
+  margin: auto;
+  border: 3px solid #73AD21;
+  
+}

@@ -46,7 +46,7 @@ class App extends React.Component {
  
   render() {
     return (
-      <div>
+      <div class="ex1">
         {
           Array.from(this.state.chars).map((item, index) => (
             <CharacterCard
@@ -58,7 +58,9 @@ class App extends React.Component {
             />
           ))
         }
-        <h2>Selected</h2>
+       
+        <div class="ex1"> <h2>Selected</h2></div>
+
     
         {
           Array.from(this.state.guess).map((item, index) => (
@@ -69,7 +71,7 @@ class App extends React.Component {
             />
           ))
         }
-        <div>Attemp {this.state.attempt}</div>
+        <div >Attemp {this.state.attempt}</div>
         {
           this.state.completed && <h4>Complete</h4>
         }

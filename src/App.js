@@ -72,9 +72,11 @@ class App extends React.Component {
           ))
         }
         <div >Attemp {this.state.attempt}</div>
+        <div class="ex1">
         {
-          this.state.completed && <h4>Complete</h4>
+          this.state.completed && <h3>Complete</h3>
         }
+        </div>
         {
             <button onClick={() => this.shoot("Hello")}>Answer</button>
         }

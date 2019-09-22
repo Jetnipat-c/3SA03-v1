@@ -58,7 +58,7 @@ background-attachment: fixed;
 background-position: top center;
 }
 .cc {
-  border: 2px solid rgb(0, 255, 128);
+  border: 2px solid rgb(255, 255, 255);
   padding: 10px;
   width: 200px;
   height: 200px;
@@ -75,6 +75,12 @@ h2{
 div.ex1 {
   width:900px;
   margin: auto;
-  border: 3px solid #73AD21;
+  
+  
+}
+h3{
+  font-size:2vw;
+  text-align-last: center;
+  color: rgb(12, 199, 27);
   
 }

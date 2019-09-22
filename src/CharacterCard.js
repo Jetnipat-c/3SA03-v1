@@ -1,27 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-export default class CharacterCard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            active: false,
+class CharacterCard extends React.Component {
+ 
+    state = {
+        active: false
+    }
+ 
+    activate = () => {
+        this.setState({
+            active:true
+        });
+        if (this.state.active === false)
+        this.props.activationHandler(this.props.value);
+    }
+
+    
+    componentDidUpdate = (prevProps) => {
+        console.log(this.props.attempt);
+        if (prevProps.attempt !== this.props.attempt || prevProps.reset !==this.props.reset) {
+            this.setState({ active: false })
+            console.log('...');
         }
     }
 
-    activate = () => {
-        if (!this.state.active) {
-            this.props.activationHandler(this.props.value)
-            this.setState({ active: true })
-        }
-    }
-    componentDidUpdate(prevProps){
-        if(prevProps.attempt != this.props.attempt){
-        this.setState({active: false})
-        }
-       }
     render() {
-        let className = `card ${this.state.active ? 'activeCard' : ''}`
+        let activeClass = this.state.active ? 'activeCard' : '';
+        let className = `card ${activeClass}`
         return (
             <div className={className} onClick={this.activate}>
                 {this.props.value}
@@ -29,3 +34,5 @@ export default class CharacterCard extends Component {
         )
     }
 }
+ 
+export default CharacterCard;

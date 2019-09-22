@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import CharacterCard from './CharacterCard.js';
 import _ from 'lodash';
+/*
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
@@ -26,11 +26,15 @@ export default class WordCard extends
     }
     shoot = (a) => {
         alert(a);
+        this.completed = true;
+       
+
     }
-    componentWillMount(){
+
+    componentWillMount() {
         let data = prepareStateFromWord(this.props.value);
         this.setState({
-            word:data.word,
+            word: data.word,
             chars: data.chars,
             attempt: data.attempt,
             guess: data.guess,
@@ -43,26 +47,48 @@ export default class WordCard extends
         if (guess.length == this.state.chars.length) {
             if (guess.join('').toString() == this.state.word) {
                 this.setState({ guess: [], completed: true })
-            } else {
+            }
+            else {
                 this.setState({ guess: [], attempt: this.state.attempt + 1 })
+            }
+        }
+
+        {
+            {
+                this.state.chars.map((c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
+                    activationHandler={this.activationHandler} />)
             }
         }
     }
     render() {
         console.log(this.state);
         return (
-            <div>
-               
-                {this.state.chars.map((c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
-                    activationHandler={this.activationHandler} />)}<br></br>
-                    <text style={mystyle}>guess ={this.state.guess}</text>
-                    <text style={mystylecolor}>attempt ={this.state.attempt} </text>
-                    <button onClick={() => this.shoot("Hello")}>Answer</button>
 
+            <div style={container}>  {this.state.chars.map((c, i) => <CharacterCard value={c} key={i} attempt={this.state.attempt}
+                activationHandler={this.activationHandler} />)} <br></br>
+                <h2>Selected guess ={this.state.guess}</h2> 
+                {
+                    (this.state.guess).map((item, index) => (
+                        <CharacterCard
+                            value={item}
+                            key={index}
+                            activationHandler={this.activationHandler}
+                        />
+                    ))
+                }
+
+                <text ><h2>attempt ={this.state.attempt}</h2></text>
+                   <button  onClick={() => this.shoot("Hello")}>Answer</button>
             </div>
         );
     }
 }
+
+const container ={
+      flexDirection: 'column', alignItems: 'center', justifyContent: 'center', 
+    
+}
+/*
 const mystyle = {
     color: "white",
     width: '40%', opacity: 0.7,
@@ -71,13 +97,23 @@ const mystyle = {
     fontFamily: "Arial",
 }
 const mystylecolor = {
+    flex: 1, flexDirection: 'colum', backgroundColor: "#FF0000", alignItems: 'center', width: '100%', height: '100%',justifyContent: 'center',
     color: "white",
-    width: '40%', opacity: 0.4,
+    width: '100%', 
     backgroundColor: "DodgerBlue",
     padding: "10px",
     fontFamily: "Arial",
 }
 const mystylex = {
-    
-        flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+
+    flex: 1, flexDirection: 'row', backgroundColor: "#FF0000", alignItems: 'center', width: '100%', height: '100%',
+    color: "green",
+    width: '100%', opacity: 0.4,
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Arial",
 }
+const button1 = {
+
+    color: "red", backgroundColor: "orange", width: '60px', height: '30px'
+}*/

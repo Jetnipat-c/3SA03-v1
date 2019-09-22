@@ -46,6 +46,7 @@ class App extends React.Component {
  
   render() {
     return (
+        
       <div class="ex1">
         {
           Array.from(this.state.chars).map((item, index) => (

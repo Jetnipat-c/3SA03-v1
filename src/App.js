@@ -78,10 +78,13 @@ class App extends React.Component {
         }
         </div>
         {
-            <button onClick={() => this.shoot("Hello")}>Answer</button>
+            <button class="button" onClick={() => this.shoot("Hello")}>Answer</button>
+            
         }
+        
         {
-          this.state.completed &&<button onClick={this.reset}>Reset</button>
+          this.state.completed &&<button class="button2"  onClick={this.reset}>Reset</button>
+        
         }
         
       </div>

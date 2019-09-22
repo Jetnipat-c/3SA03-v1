@@ -46,7 +46,7 @@ class App extends React.Component {
  
   render() {
     return (
-        
+    
       <div class="ex1">
         {
           Array.from(this.state.chars).map((item, index) => (
@@ -60,7 +60,7 @@ class App extends React.Component {
           ))
         }
        
-        <div class="ex1"> <h2>Selected</h2></div>
+        <div class="ex1"> <h2 >Selected</h2></div>
 
     
         {
@@ -73,7 +73,7 @@ class App extends React.Component {
           ))
         }
        <h1> <div >Attemp {this.state.attempt}</div></h1>
-       <h4>Jetnipat Thankeatphangan 6035512021</h4>
+       <p id="rcorners2"><h4>Jetnipat Thankeatphangan 6035512021</h4></p>
         <div class="ex1">
         {
           this.state.completed && <h3>Complete</h3>

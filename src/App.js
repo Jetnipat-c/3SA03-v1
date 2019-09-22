@@ -76,7 +76,9 @@ class App extends React.Component {
         {
             <button onClick={() => this.shoot("Hello")}>Answer</button>
         }
-        
+        {
+          this.state.completed &&<button onClick={this.reset}>Reset</button>
+        }
         
       </div>
      

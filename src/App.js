@@ -72,7 +72,8 @@ class App extends React.Component {
             />
           ))
         }
-        <div >Attemp {this.state.attempt}</div>
+       <h1> <div >Attemp {this.state.attempt}</div></h1>
+       <h4>Jetnipat Thankeatphangan 6035512021</h4>
         <div class="ex1">
         {
           this.state.completed && <h3>Complete</h3>
